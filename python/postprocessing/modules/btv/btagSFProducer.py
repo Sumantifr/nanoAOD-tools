@@ -36,7 +36,7 @@ class btagSFProducer(Module):
     """
 
     def __init__(
-            self, era, algo='csvv2', selectedWPs=['M', 'shape_corr'],
+            self, era, algo='csvv2', selectedWPs=['L', 'M', 'shape_corr'],
             sfFileName=None, verbose=0, jesSystsForShape=["jes"]
     ):
         self.era = era
@@ -46,7 +46,7 @@ class btagSFProducer(Module):
         self.jesSystsForShape = jesSystsForShape
         # CV: Return value of BTagCalibrationReader::eval_auto_bounds() is zero
         # in case jet abs(eta) > 2.4 !!
-        self.max_abs_eta = 2.4
+        self.max_abs_eta = 2.5
         # define measurement type for each flavor
         self.inputFilePath = os.environ['CMSSW_BASE'] + \
             "/src/PhysicsTools/NanoAODTools/data/btagSF/"
@@ -84,6 +84,24 @@ class btagSFProducer(Module):
                     },
                     'supported_wp': ["L", "M", "T", "shape_corr"]
                 },
+		'UL2016_preVFP': {
+                    'inputFileName': "DeepCSV_2016LegacySF_V1.csv",
+                    'measurement_types': {
+                        0: "comb",  # b
+                        1: "comb",  # c
+                        2: "incl"   # light
+                    },
+                    'supported_wp': ["L", "M", "T", "shape_corr"]
+                },
+		'UL2016': {
+                    'inputFileName': "DeepCSV_2016LegacySF_V1.csv",
+                    'measurement_types': {
+                        0: "comb",  # b
+                        1: "comb",  # c
+                        2: "incl"   # light
+                    },
+                    'supported_wp': ["L", "M", "T", "shape_corr"]
+                },
                 '2017': {
                     'inputFileName': "DeepCSV_94XSF_V4_B_F.csv",
                     'measurement_types': {
@@ -94,7 +112,7 @@ class btagSFProducer(Module):
                     'supported_wp': ["L", "M", "T", "shape_corr"]
                 },
                 'UL2017': {
-                    'inputFileName': "DeepCSV_106XUL17SF.csv",
+                    'inputFileName': "DeepCSV_106XUL17SF_V2p1.csv",
                     'measurement_types': {
                         0: "comb",  # b
                         1: "comb",  # c
@@ -112,7 +130,7 @@ class btagSFProducer(Module):
                     'supported_wp': ["L", "M", "T", "shape_corr"]
                 },
                 'UL2018': {
-                    'inputFileName': "DeepCSV_106XUL18SF.csv",
+                    'inputFileName': "DeepCSV_106XUL18SF_V1p1.csv",
                     'measurement_types': {
                         0: "comb",  # b
                         1: "comb",  # c
@@ -131,6 +149,24 @@ class btagSFProducer(Module):
                     },
                     'supported_wp': ["L", "M", "T", "shape_corr"]
                 },
+		'UL2016_preVFP': {
+                    'inputFileName': "DeepJet_2016LegacySF_V1.csv",
+                    'measurement_types': {
+                        0: "comb",  # b
+                        1: "comb",  # c
+                        2: "incl"   # light
+                    },
+                    'supported_wp': ["L", "M", "T", "shape_corr"]
+                },
+		'UL2016': {
+                    'inputFileName': "DeepJet_2016LegacySF_V1.csv",
+                    'measurement_types': {
+                        0: "comb",  # b
+                        1: "comb",  # c
+                        2: "incl"   # light
+                    },
+                    'supported_wp': ["L", "M", "T", "shape_corr"]
+                },
                 '2017': {
                     'inputFileName': "DeepFlavour_94XSF_V3_B_F.csv",
                     'measurement_types': {
@@ -141,7 +177,7 @@ class btagSFProducer(Module):
                     'supported_wp': ["L", "M", "T", "shape_corr"]
                 },
                 'UL2017': {
-                    'inputFileName': "DeepJet_106XUL17SF.csv",
+                    'inputFileName': "DeepJet_106XUL17SF_V2p1.csv",
                     'measurement_types': {
                         0: "comb",  # b
                         1: "comb",  # c
@@ -159,7 +195,7 @@ class btagSFProducer(Module):
                     'supported_wp': ["L", "M", "T", "shape_corr"]
                 },
                 'UL2018': {
-                    'inputFileName': "DeepJet_106XUL18SF.csv",
+                    'inputFileName': "DeepJet_106XUL18SF_V1p1.csv",
                     'measurement_types': {
                         0: "comb",  # b
                         1: "comb",  # c
