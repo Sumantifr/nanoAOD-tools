@@ -96,9 +96,9 @@ class muonScaleResProducer(Module):
         return True
 
 
-muonScaleRes2016 = lambda: muonScaleResProducer('roccor.Run2.v3',
+muonScaleRes2016 = lambda: muonScaleResProducer('roccor.Run2.v5',
                                                 'RoccoR2016.txt', 2016)
-muonScaleRes2017 = lambda: muonScaleResProducer('roccor.Run2.v3',
+muonScaleRes2017 = lambda: muonScaleResProducer('roccor.Run2.v5',
                                                 'RoccoR2017.txt', 2017)
-muonScaleRes2018 = lambda: muonScaleResProducer('roccor.Run2.v3',
+muonScaleRes2018 = lambda: muonScaleResProducer('roccor.Run2.v5',
                                                 'RoccoR2018.txt', 2018)
